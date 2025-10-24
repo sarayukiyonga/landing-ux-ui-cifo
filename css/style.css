@@ -1,0 +1,250 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(../fonts/Inter-VariableFont_opsz_wght.woff);
+}
+
+@font-face {
+    font-family: "Inter Italic";
+    src: url(../fonts/Inter-Italic-VariableFont_opsz_wght.woff);
+}
+
+/* Collection name: Colors */
+/* Mode: Mode 1 */
+:root {
+  --primary-00: #ff9100;
+  --secondary-00: #03045e;
+  --primary-dark-10: #e85d04;
+  --primary-dark-20: #cd3700;
+  --primary-dark-30: #b40500;
+  --primary-dark-40: #9c0000;
+  --primary-light-10: #ffa522;
+  --primary-light-20: #ffb844;
+  --primary-light-30: #ffc966;
+  --primary-light-40: #ffd988;
+  --primary-light-50: #ffe6aa;
+  --primary-light-60: #fff2cc;
+  --secondary-dark-10: #000841;
+  --secondary-dark-20: #00071c;
+  --secondary-light-10: #213280;
+  --secondary-light-20: #42679e;
+  --secondary-light-30: #639eb9;
+  --neutral-00: #ebdcd4;
+  --neutral-light-10: #eedfd9;
+  --neutral-light-20: #f1e2df;
+  --neutral-light-30: #f4e6e5;
+  --neutral-light-40: #f6eaea;
+  --neutral-light-50: #f9f0f1;
+  --neutral-light-60: #fcf6f7;
+  --neutral-dark-10: #cec0b9;
+  --neutral-dark-20: #b1a49e;
+  --neutral-dark-30: #948884;
+  --neutral-dark-40: #766c69;
+  --success-00: #94a620;
+  --error-00: #e11710;
+  --info-00: #0096c7;
+  --warning-00: #fcd846;
+  --success-light-10: #ced989;
+  --success-dark-10: #4d580b;
+  --error-dark-10: #780501;
+  --error-light-10: #fa8180;
+  --warning-light-10: #ffedae;
+  --warning-dark-10: #b38700;
+  --neutral-dark-50: #4c4645;
+
+
+/* Text-size styles */
+/* base size: typography---inter---body-1 (16px) */
+--typography---inter---h1: 1.5rem;
+--typography---inter---h2: 1.25rem;
+--typography---inter---h3: 1rem;
+--typography---inter---h3: 1rem;
+--typography---inter---body-1: 1rem;
+--typography---inter---body-2: 0.88rem;
+--typography---inter---label: 0.88rem;
+--typography---inter---caption: 0.75rem;
+--typography---inter--italic---h1: 2rem;
+--typography---inter--italic---h2: 1.5rem;
+--typography---inter--italic---h3: 1.25rem;
+--typography---inter--italic---body-1: 1rem;
+--typography---inter--italic---body-2: 0.88rem;
+--typography---inter--italic---label: 0.88rem;
+--typography---inter--italic---caption: 0.75rem;
+
+/* Effect styles */
+--soft:  0px 2px 2px rgba(118, 108, 105, 0.15);
+--medium:  0px 3px 3px rgba(118, 108, 105, 0.25);
+--strong:  0px 5px 5px rgba(118, 108, 105, 0.25);
+--soft-secondary:  0px 2px 2px rgba(0, 0, 0, 0.25);
+--medium-secondary:  0px 3px 3px rgba(0, 0, 0, 0.25);
+--dark-secondary:  0px 5px 5px rgba(0, 0, 0, 0.25);
+
+/* Gradients */
+--degradado: linear-gradient(222deg, #FF9100 4.58%, #E85D04 100%);
+}
+
+body {
+    font-family: "Inter";
+}
+
+h1 {
+    font-size: var(--typography---inter---h1);
+    font-weight: 900;
+}
+h2 {
+    font-size: var(--typography---inter---h2);
+    font-weight: 900;
+}
+
+#container {
+    background-color: #fff;
+}
+
+.topNavigation {
+    position: sticky;
+    top: 0;
+    right: 0; 
+    background-color: var(--neutral-light-60);
+  width: 100%;
+  display: grid;
+  grid:
+    "marca navegacion" 1fr
+    / 172px 1fr;
+  gap: 8px;
+  box-shadow: var(--strong);
+}
+
+.marca { grid-area: marca; }
+.navegacion { grid-area: navegacion; }
+
+.marca img {
+    width: 100%;
+    object-fit: contain;
+    align-content: center;
+}
+
+#cabecera {
+  z-index: 99;
+}
+
+#cabecera header {
+    width: 100%;
+    height:100%;
+    padding: 20px;
+}
+#cabecera nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    font-size: var(--typography---inter--italic---body-1);
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 20px;
+}
+
+button {
+    border-radius: 20px;
+    border: 0;
+    padding: 10px;
+    margin: 5px;
+}
+
+button.primary {
+    background: var(--primary-00, #FF9100);
+}
+
+.botones {
+    display: flex;
+}
+
+#hero {
+    background: var(--degradado);
+   width: 100%;
+   height:400px;
+}
+
+div.imagen img {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+}
+.layout {
+  display: grid;
+  grid-template-columns:
+    repeat(12, 1fr);
+   grid-template-rows:
+    repeat(12, 1fr); 
+}
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+  grid-row: 2 / 12; 
+  grid-column: 2 / 6;
+}
+.imagen {
+  grid-row: 2 / 11; 
+  grid-column: 7 / 11;
+} 
+
+#funcionalidades {
+  background-color: var(--neutral-00);
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid:
+    "titulo02 titulo02" 200px
+    "image01 image02" 1fr
+    / 1fr 1fr;
+  gap: 8px;
+  padding: 2rem;
+}
+
+.titulo02 { 
+    padding: 3rem;
+    grid-area: titulo02; 
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .titulo02 h2 {
+    margin: 40px 10px 20px 10px;
+  }
+  .titulo02 p {
+    width: 60%;
+    margin: auto;
+  }
+.image01 { 
+  grid-area: image01;
+  width: 100%;
+  padding: 40px;
+}
+.image02 { 
+  grid-area: image02; 
+  width: 100%;
+  padding: 40px;
+}
+
+
+#funcionalidades h2 {
+    color: var(--primary-dark-20);
+}
+
+
+
+
