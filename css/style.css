@@ -7,11 +7,13 @@
 
 @font-face {
     font-family: "Inter";
+    font-display:swap;
     src: url(../fonts/Inter-VariableFont_opsz_wght.woff);
 }
 
 @font-face {
     font-family: "Inter Italic";
+    font-display:swap;
     src: url(../fonts/Inter-Italic-VariableFont_opsz_wght.woff);
 }
 
