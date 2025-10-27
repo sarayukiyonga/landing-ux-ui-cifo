@@ -179,6 +179,15 @@ div.imagen img {
     height: 450px;
     object-fit: contain;
 }
+
+#hero .texto button {
+  background: none;
+}
+
+#hero .texto button img {
+  width: 180px;
+}
+
 .layout {
   display: grid;
   grid-template-columns:
