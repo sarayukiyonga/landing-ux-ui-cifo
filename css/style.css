@@ -208,7 +208,7 @@ div.imagen img {
   grid-column: 2 / 6;
 }
 .imagen {
-  grid-row: 2 / 11; 
+  grid-row: 2 / 12; 
   grid-column: 7 / 11;
 } 
 
