@@ -8,7 +8,7 @@
 @font-face {
     font-family: "Inter";
     font-display:swap;
-    src: url(../fonts/Inter-VariableFont_opsz_wght.woff);
+    src: url(../fonts/Inter-VariableFont_opsz_wght.woff2);
 }
 
 @font-face {
@@ -16,6 +16,7 @@
     font-display:swap;
     src: url(../fonts/Inter-Italic-VariableFont_opsz_wght.woff);
 }
+
 
 /* Collection name: Colors */
 /* Mode: Mode 1 */
@@ -63,8 +64,8 @@
 
 /* Text-size styles */
 /* base size: typography---inter---body-1 (16px) */
---typography---inter---h1: 1.5rem;
---typography---inter---h2: 1.25rem;
+--typography---inter---h1: 2.5rem;
+--typography---inter---h2: 1.7rem;
 --typography---inter---h3: 1rem;
 --typography---inter---h3: 1rem;
 --typography---inter---body-1: 1rem;
@@ -89,6 +90,7 @@
 
 /* Gradients */
 --degradado: linear-gradient(222deg, #FF9100 4.58%, #E85D04 100%);
+--degradado-secondary: var(--gradientSoft, linear-gradient(124deg, var(--neutral-light-60, #FCF6F7) 40.15%, var(--neutral-00, #EBDCD4) 72.19%, var(--neutral-light-30, #F4E6E5) 72.19%, var(--neutral-00, #EBDCD4) 90.64%));
 }
 
 body {
@@ -96,18 +98,20 @@ body {
 }
 
 h1 {
+    font-family: "Inter";
     font-size: var(--typography---inter---h1);
     font-weight: 900;
 }
 h2 {
+    font-family: "Inter";
     font-size: var(--typography---inter---h2);
-    font-weight: 900;
+    font-weight: 700;
 }
 
 #container {
     background-color: #fff;
 }
-
+/*----------------------Top Bar --------------------*/
 .topNavigation {
     position: sticky;
     top: 0;
@@ -160,6 +164,7 @@ button {
     border: 0;
     padding: 10px;
     margin: 5px;
+    cursor: pointer;
 }
 
 button.primary {
@@ -169,11 +174,10 @@ button.primary {
 .botones {
     display: flex;
 }
-
+/*----------------------Hero --------------------*/
 #hero {
     background: var(--degradado);
    width: 100%;
-   height:400px;
 }
 
 div.imagen img {
@@ -190,6 +194,10 @@ div.imagen img {
   width: 180px;
 }
 
+#hero .texto button img:hover {
+  filter: invert();
+}
+
 .layout {
   display: grid;
   grid-template-columns:
@@ -197,6 +205,8 @@ div.imagen img {
    grid-template-rows:
     repeat(12, 1fr); 
 }
+
+
 .texto {
     display: flex;
     flex-direction: column;
@@ -204,16 +214,17 @@ div.imagen img {
     justify-content: center;
     text-align: center;
     gap: 1rem;
-  grid-row: 2 / 12; 
-  grid-column: 2 / 6;
-}
-.imagen {
-  grid-row: 2 / 12; 
-  grid-column: 7 / 11;
-} 
-
+    grid-row: 2 / 6; 
+    grid-column: 1 / 12;
+  }
+  .imagen {
+    grid-row: 6 / 12; 
+    grid-column: 1 / 12;
+  } 
+/*----------------------Funcionalidades --------------------*/
 #funcionalidades {
-  background-color: var(--neutral-00);
+  /* background-color: var(--neutral-00); */
+  background: var(--degradado-secondary);
   width: 100%;
   height: fit-content;
   display: grid;
@@ -256,6 +267,37 @@ div.imagen img {
     color: var(--primary-dark-20);
 }
 
+/*----------------------Media Query --------------------*/
 
+@media (min-width: 640px) { 
+  .texto {
+  grid-row: 2 / 12; 
+  grid-column: 2 / 6;
+}
+.imagen {
+  grid-row: 2 / 12; 
+  grid-column: 7 / 11;
+} 
+}
 
+@media (min-width: 768px) { 
+  .texto {
+  grid-row: 2 / 12; 
+  grid-column: 2 / 6;
+}
+.imagen {
+  grid-row: 2 / 12; 
+  grid-column: 6 / 12;
+} 
+}
 
+@media (min-width: 1024px) { 
+  .texto {
+  grid-row: 2 / 12; 
+  grid-column: 3 / 7;
+}
+.imagen {
+  grid-row: 2 / 12; 
+  grid-column: 7 / 11;
+} 
+}
