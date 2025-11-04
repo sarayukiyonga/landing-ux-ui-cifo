@@ -119,9 +119,10 @@ h2 {
     background-color: var(--neutral-light-60);
   width: 100%;
   display: grid;
-  grid:
-    "marca navegacion" 1fr
-    / 172px 1fr;
+    grid:
+    "marca" 1fr
+    "navegacion" 1fr
+    / 1fr;
   gap: 8px;
   box-shadow: var(--strong);
 }
@@ -146,7 +147,8 @@ h2 {
 }
 #cabecera nav {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content:space-around;
     align-items: center;
     height: 100%;
     gap: 20px;
@@ -154,6 +156,7 @@ h2 {
 }
 nav ul {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     list-style: none;
     gap: 20px;
@@ -215,11 +218,11 @@ div.imagen img {
     text-align: center;
     gap: 1rem;
     grid-row: 2 / 6; 
-    grid-column: 1 / 12;
+    grid-column: 2 / 12;
   }
   .imagen {
     grid-row: 6 / 12; 
-    grid-column: 1 / 12;
+    grid-column: 2 / 12;
   } 
 /*----------------------Funcionalidades --------------------*/
 #funcionalidades {
@@ -270,6 +273,19 @@ div.imagen img {
 /*----------------------Media Query --------------------*/
 
 @media (min-width: 640px) { 
+  .topNavigation {
+    grid:
+    "marca navegacion" 1fr
+    / 172px 1fr;
+  gap: 8px;
+}
+#cabecera nav {
+  flex-direction: row;
+  justify-content: flex-end;
+}
+nav ul {
+    flex-direction: row;
+}
   .texto {
   grid-row: 2 / 12; 
   grid-column: 2 / 6;
@@ -289,6 +305,9 @@ div.imagen img {
   grid-row: 2 / 12; 
   grid-column: 6 / 12;
 } 
+nav ul {
+    flex-direction: row;
+}
 }
 
 @media (min-width: 1024px) { 
@@ -300,4 +319,7 @@ div.imagen img {
   grid-row: 2 / 12; 
   grid-column: 7 / 11;
 } 
+nav ul {
+    flex-direction: row;
+}
 }
