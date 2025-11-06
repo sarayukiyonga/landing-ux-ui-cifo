@@ -1,4 +1,7 @@
 @charset "UTF-8";
+*{
+  /* border:1px solid #e11710; */
+}
 @font-face {
     font-family: "Inter";
     font-display:swap;
@@ -90,7 +93,7 @@
 
 --neutral--transparent: oklch(0.8174 0.0186 48.48 / 50%);
 }
-/* capa Defaults */
+/* ------------------ capa Defaults -------------- */
 @layer defaults {
   *{
     margin: 0;
@@ -258,16 +261,17 @@ div.imagen img {
     grid-column: 2 / 12;
   } 
 /*----------------------Funcionalidades --------------------*/
-
 #funcionalidades {
-  background-color: var(--primary-light-60);
+    background-color: var(--primary-light-60);
+}
+.funcionalidades {
   width: 100%;
-  min-height: 500px;
+
   display: grid;
   grid:
-    "img tit" 129px
-    "img cards" 1fr
-    / 1fr 1fr;
+    "img" 1fr
+    "tit" 129px
+    "cards" 1fr;
   gap: 8px;
 }
 
@@ -287,18 +291,18 @@ div.imagen img {
   align-items: center;
   justify-content: center;}
 
-#funcionalidades div.tit h2 {
+.funcionalidades div.tit h2 {
     padding: 2rem 2rem 0.5rem 2rem;
     text-align: center;
 }
-#funcionalidades div.tit p {
+.funcionalidades div.tit p {
   padding: 0.5rem 2rem 1rem 2rem;
   text-align: center;
 }
-
+/* cards */
 .card {
 display: inline-flex;
-width: 30rem;
+width: 19rem;
 padding: 1.20rem;
 align-items: flex-start;
 margin: auto;
@@ -369,8 +373,36 @@ nav ul {
 nav ul {
     flex-direction: row;
 }
-
+.funcionalidades {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid:
+    "img tit" 129px
+    "img cards" 1fr
+    / 1fr 1fr;
 }
+
+.img { grid-area: img; }
+.tit { grid-area: tit; }
+.cards { 
+  grid-area: cards;
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  margin: auto;
+  height: auto;
+  padding: 2rem; 
+  align-items: center;
+  justify-content: center;}
+
+  .funcionalidades .img {
+    width: auto;
+    max-height: 40rem;
+    margin: auto;
+  }
+}
+
 
 @media (min-width: 1024px) { 
   .texto {
@@ -384,12 +416,12 @@ nav ul {
 nav ul {
     flex-direction: row;
 }
+
 }
 
 @media (min-width: 1440px) {
   .funcionalidades {
   max-width: 1440px;
-  min-height: 500px;
   margin: 0 auto;
   display: grid;
   grid:
@@ -400,5 +432,16 @@ nav ul {
 
 .img { grid-area: img; }
 .tit { grid-area: tit; }
-.cards { grid-area: cards; }
+.cards { 
+  grid-area: cards;
+  width: 30rem;
+  margin: auto;
+  height: auto;
+  padding: 2rem; 
+  align-items: center;
+  justify-content: center;}
+}
+
+.card {
+  width: 100%;
 }
