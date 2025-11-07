@@ -395,7 +395,7 @@ backdrop-filter: blur(3px);
 
 @keyframes entryLeft {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
   }
 
   to {
@@ -416,7 +416,7 @@ backdrop-filter: blur(3px);
 
 @keyframes entryRight {
   from {
-    transform: translateX(100%);
+    transform: translateX(200%);
   }
 
   to {
