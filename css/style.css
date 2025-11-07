@@ -95,10 +95,13 @@
 }
 /* ------------------ capa Defaults -------------- */
 @layer defaults {
-  *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
 }
   body {
     font-family: "Inter";
@@ -131,25 +134,47 @@ a:hover {
   color: var(--primary-dark-10);
 }
 
-button {
-  border-radius: 20px;
-  border: 0px;
-  padding: 10px;
-  margin: 5px;
-  cursor: pointer;
-  background-color: var(--neutral-00);
-  color: var(--secondary-dark-10);
-}
-
-button:hover {
-  background-color: var(--primary-light-20);
-}
-
 }
 
 #container {
     background-color: #fff;
 }
+
+@layer components {
+
+  button {
+    @layer elements {
+    border-radius: 20px;
+    border: 0px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: var(--neutral-00);
+    color: var(--secondary-dark-10);
+    }
+    @layer states {
+      &:where(:hover, :focus-visible) {
+        background-color: var(--primary-light-20);
+      }
+    }
+}
+  input {
+    @layer elements {
+    border-radius: 20px;
+    border: 1px solid var(--neutral-dark-30);
+    padding: 10px;
+    margin: 5px;
+  }
+    @layer states {
+       &:where(:hover, :focus-visible) {
+     border: 1px solid var(--primary-dark-10);
+  }
+    }
+ 
+}
+}
+
+
 
 /*----------------------Top Bar --------------------*/
 .topNavigation {
@@ -219,6 +244,11 @@ nav ul {
    width: 100%;
 }
 
+
+
+
+
+
 div.imagen img {
     width: 100%;
     height: 450px;
@@ -260,6 +290,7 @@ div.imagen img {
     grid-row: 6 / 12; 
     grid-column: 2 / 12;
   } 
+
 /*----------------------Funcionalidades --------------------*/
 #funcionalidades {
     background-color: var(--primary-light-60);
@@ -334,6 +365,134 @@ backdrop-filter: blur(3px);
   text-align: center;
   padding: 5rem;
 }
+
+#fav {
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-00);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0px 0px 10px grey;
+    color: white;
+}
+
+#fav:hover {
+    color: white;
+    background-color: var(--secondary-light-20);
+}
+
+#fav:active {
+    color: white;
+    background-color: var(--primary-light-20)
+}
+/* -------------------Animaciones  -------------*/
+
+@keyframes entryLeft {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.entryLeftAnim {
+  view-timeline-name: --entryAnim;
+  view-timeline-axis: block;
+
+  animation-timeline: --entryAnim;
+  animation-name: entryLeft;
+
+  animation-range: entry 0% cover 60%;
+  animation-fill-mode: both;
+}
+
+@keyframes entryRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.entryRightAnim {
+  view-timeline-name: --entryAnim;
+  view-timeline-axis: block;
+
+  animation-timeline: --entryAnim;
+  animation-name: entryRight;
+
+  animation-range: entry 0% cover 60%;
+  animation-fill-mode: both;
+}
+
+@keyframes entryCard01 {
+  from {
+    transform: rotate(0deg);
+    margin-bottom: 2rem;
+  }
+
+  to {
+    transform: rotate(-10deg);
+    margin-bottom: 0;
+  }
+}
+
+.entryCard01Anim {
+  animation-name: entryCard01;
+  animation-timeline: --entryAnim; 
+  animation-range: entry 30% cover 80%;
+  animation-fill-mode: both;
+}
+
+@keyframes entryCard03 {
+  from {
+    transform: rotate(0deg);
+    margin-top: 2rem;
+  }
+
+  to {
+    transform: rotate(10deg);
+    margin-top: 0;
+  }
+}
+
+.entryCard03Anim {
+  animation-name: entryCard03;
+  animation-timeline: --entryAnim; 
+  animation-range: entry 30% cover 80%;
+  animation-fill-mode: both;
+}
+  #hero .entryRightAnim {
+  view-timeline-name:unset;
+  view-timeline-axis:unset;
+  animation-timeline:unset;
+  /* animation-range: entry 0% cover 60%; */
+  animation-name: entryRight;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  }
+
+  #hero .entryLeftAnim {
+  view-timeline-name:unset;
+  view-timeline-axis:unset;
+  animation-timeline:unset;
+  /* animation-range: entry 0% cover 60%; */
+  animation-name: entryLeft;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  }
 
 /*----------------------Media Query --------------------*/
 
@@ -420,6 +579,7 @@ nav ul {
 }
 
 @media (min-width: 1440px) {
+
   .funcionalidades {
   max-width: 1440px;
   margin: 0 auto;
@@ -428,7 +588,7 @@ nav ul {
     "img tit" 129px
     "img cards" 1fr
     / 1fr 1fr;
-}
+  }
 
 .img { grid-area: img; }
 .tit { grid-area: tit; }
@@ -439,7 +599,45 @@ nav ul {
   height: auto;
   padding: 2rem; 
   align-items: center;
-  justify-content: center;}
+  justify-content: center;
+}
+
+#funcionalidades .entryRightAnim {
+  view-timeline-name:unset;
+  view-timeline-axis:unset;
+  animation-timeline:unset;
+  animation-name: entryRight;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+#funcionalidades .entryLeftAnim {
+  view-timeline-name:unset;
+  view-timeline-axis:unset;
+  animation-timeline:unset;
+  animation-name: entryLeft;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+.entryCard03Anim {
+  animation-name: entryCard03;
+  animation-timeline: unset; 
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
+.entryCard01Anim {
+  animation-name: entryCard01;
+  animation-timeline: unset; 
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+}
 }
 
 .card {
