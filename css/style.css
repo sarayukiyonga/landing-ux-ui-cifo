@@ -410,7 +410,7 @@ backdrop-filter: blur(3px);
   animation-timeline: --entryAnim;
   animation-name: entryLeft;
 
-  animation-range: entry 0% cover 60%;
+  animation-range: entry 0% cover 50%;
   animation-fill-mode: both;
 }
 
@@ -431,7 +431,7 @@ backdrop-filter: blur(3px);
   animation-timeline: --entryAnim;
   animation-name: entryRight;
 
-  animation-range: entry 0% cover 60%;
+  animation-range: entry 0% cover 50%;
   animation-fill-mode: both;
 }
 
