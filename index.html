@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMPApp - Aplicación de gestión de AMPA y AFA</title>
     <meta name="description" content="AMPApp es la Aplicación móvil para la gestión de AMPA y AFA">
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,11 +15,11 @@
         </header>
         <nav class="navegacion">
             <ul>
-                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#container">Inicio</a></li>
                 <li><a href="#funcionalidades">Funcionalidades</a></li>
             </ul>
             <div class="botones">
-                <a href="#"><button class="button">Iniciar sesión</button></a>
+                <a href="#container"><button class="button">Iniciar sesión</button></a> 
                 <a href="#registro"><button class="button primary">Registrar mi AMPA</button></a>
             </div>
         </nav>
@@ -30,12 +29,7 @@
                 <div class="texto entryLeftAnim">
                 <h1>Simplifica la gestión de tu AMPA y olvídate del papeleo.</h1>
                 <p>AMPApp conecta a la junta con las familias: pagos online, inscripciones extraescolares y comunicación en una sola app.</p>
-                 <a href=""><button>Registrar mi AMPA/AFA (Empezar ahora)</button></a>
-                <div>
-                <a href="#"><img src="img/appstore.png" alt="Descargar de appstore"></a>
-                <a href="#"><img src="img/google-play.png" alt="Descargar de Google Play"></a>
-            </div>
-                
+                 <a href="#registro"><button class="cta">Registrar mi AMPA/AFA</button></a>
                 </div>
                 <div class="imagen entryRightAnim"><img src="img/mockupPhone.webp" alt="Captures de pantalla de la App" srcset=""></div>
             </section>
@@ -44,7 +38,7 @@
                 <div class="funcionalidades">
     <img class="img entryLeftAnim" src="img/mockup-inscripciones.png" alt="Mockup de la pantalla de inscripción en un móvil">
 
-    <div class="tit entryRightAnim">
+    <div class="tit entryAlphaAnim">
         <h2>Funcionalidades</h2>
         <p>A través de AMPApp los socios de tu AMPA/AFA podrán realizar los pagos e inscripciones a extraescolares.</p>
     </div>
@@ -59,26 +53,84 @@
     </div>
             </section>
 
-            <section id="registro">
+            <section class="entryAlphaAnim" id="registro">
                 <h2>Da el salto digital. Empieza a gestionar tu AMPA hoy mismo.</h2>
-                <p>Completa el formulario y uno de nuestros expertos se pondrá en contacto con tu junta para activar AMPApp en [TU CENTRO].</p>
+                <p>Completa el formulario y uno de nuestros expertos se pondrá en contacto contigo activar AMPApp en tu centro.</p>
 
-                <form action="">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                    <div>
+                <form action="#" method="post">
+                    <label for="correo">Email</label>
+                    <input type="email" name="correo" id="correo" placeholder="Tu correo electrónico" required>
+                    <div class="checkboxLabel">
                     <label for="miembroAmpa">Confirmo que represento a la junta de mi AMPA/AFA.</label>
-                    <input type="checkbox" name="mienbroAmpa" id="miembroAmpa"> </div>
-                    <button>Registrar mi AMPA</button>
+                    <input type="checkbox" name="mienbroAmpa" id="miembroAmpa" required> </div>
+                    <button type="submit" class="primary">Registrar mi AMPA</button>
                 </form>
+                <p>Al registrarte confirmas que aceptas nuestros <a href="politica.html">Términos y Condiciones, la Política de Privacidad, y la Política de Cookies</a></p>
             </section>
+            <section id="descarga-final" class="cta-download">
+    <div class="container">
+        <h3 class="entryLeftAnim">Descarga AMPApp y Transforma la Gestión de tu AMPA.</h3>
+        
+        <p class="entryLeftAnim">Disponible en iOS y Android. Únete a la gestión digital hoy mismo.</p>
+        
+        <div class="store-buttons entryRightAnim">
+            <a href="[ENLACE_A_APP_STORE]" target="_blank" class="store-link">
+                <img src="img/appstore.png" alt="Descargar en la App Store">
+            </a>
+            <a href="[ENLACE_A_GOOGLE_PLAY]" target="_blank" class="store-link">
+                <img src="img/google-play.png" alt="Descargar en Google Play">
+            </a>
+        </div>
+    </div>
+</section>
         </main>
-        <footer></footer>
+        <footer role="contentinfo">
+    <div class="footer-container">
+        
+        <div class="footer-brand">
+            <a href="#top" title="Volver al inicio - AMPApp">
+                <img src="img/marca-bl.svg" alt="Logotipo de AMPApp">
+            </a>
+            
+            <p class="copyright">
+                &copy; 2025 AMPApp. Todos los derechos reservados.<br>
+                Diseño UX/UI CIFO Saray Martínez.
+            </p>
+        </div>
+
+        <nav class="footer-nav-col" aria-label="Navegación del sitio">
+            <h3>Descubre</h3>
+            <ul>
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#registro">Registro AMPA</a></li>
+                <li><a href="#descarga-final">Descargar App</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="Enlaces de Ayuda y Servicio">
+            <h3>Soporte</h3>
+            <ul>
+                <li><a href="/faq">Preguntas Frecuentes (FAQ)</a></li>
+                <li><a href="/manual">Manual de Uso</a></li>
+                <li><a href="mailto:soporte@ampapp.com">Email de Soporte</a></li>
+                <li><a href="/centro-ayuda">Centro de Ayuda</a></li>
+            </ul>
+        </nav>
+
+        <nav class="footer-nav-col" aria-label="Enlaces Legales">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="/politica-privacidad.html">Política de Privacidad</a></li>
+                <li><a href="/politica-cookies.html">Política de Cookies</a></li>
+                <li><a href="/terminos">Términos del Servicio</a></li>
+                <li><a href="/accesibilidad">Declaración de Accesibilidad</a></li>
+            </ul>
+        </nav>
+
+    </div>
+</footer>
     </div>
     <a href="#top" id="fav">⬆</a>
-    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script> -->
 </body>
 </html>

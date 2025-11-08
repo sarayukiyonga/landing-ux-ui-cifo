@@ -92,6 +92,10 @@
 /* Transparent Colors */
 
 --neutral--transparent: oklch(0.8174 0.0186 48.48 / 50%);
+
+/* espacios */
+--altura-nav: 83px;
+
 }
 /* ------------------ capa Defaults -------------- */
 @layer defaults {
@@ -134,11 +138,18 @@ a:hover {
   color: var(--primary-dark-10);
 }
 
+.checkboxLabel {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
-#container {
-    background-color: #fff;
+section[id] {
+  scroll-margin-top: var(--altura-nav);
 }
+
+}
+
+
 
 @layer components {
 
@@ -158,6 +169,11 @@ a:hover {
       }
     }
 }
+
+button.cta { 
+    margin: 5px 100px;
+    }
+
   input {
     @layer elements {
     border-radius: 20px;
@@ -174,7 +190,9 @@ a:hover {
 }
 }
 
-
+#container {
+    background-color: #fff;
+}
 
 /*----------------------Top Bar --------------------*/
 .topNavigation {
@@ -386,7 +404,120 @@ backdrop-filter: blur(3px);
     color: white;
     background-color: var(--primary-light-20)
 }
+
+/* ----------------Formulario ---------------*/
+#registro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+/* -----------------Descarga la app ------------*/
+
+
+.cta-download {
+    background-color: var(--neutral-light-30);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+
+.store-buttons {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    margin-top: 30px;
+}
+
+.store-link img {
+    height: 50px; 
+    width: auto;
+    transition: transform 0.2s; 
+}
+
+.store-link img:hover {
+    transform: translateY(-3px); 
+    opacity: 0.9;
+}
+
+/* ---------------------Footer ---------------------*/
+
+footer {
+    background-color: var(--secondary-dark-10);
+    color: var(--neutral-light-60);
+    padding: 40px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    gap: 30px;
+    /* Estructura para móvil: apilado */
+    grid-template-columns: 1fr; 
+}
+
+/* Títulos de columna */
+footer h3 {
+    color: var(--primary-light-10);
+    font-size: var(--typography---inter---body-1);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Estilos de la marca/logo */
+.footer-brand img {
+    max-width: 150px; 
+    margin-bottom: 10px;
+}
+
+.copyright {
+    font-size: var(--typography---inter---caption);
+    color: var(--neutral-dark-10);
+}
+
+/* Listas de navegación */
+.footer-nav-col ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav-col a:link, .footer-nav-col a:visited {
+    color: var(--neutral-light-30);
+    text-decoration: none;
+    font-size: var(--typography---inter---body-2);
+    display: block; 
+    padding: 3px 0;
+}
+
+.footer-nav-col a:hover {
+    color: var(--primary-light-20); 
+}
+
+
 /* -------------------Animaciones  -------------*/
+
+@keyframes entryAlpha {
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;
+  }
+}
+
+.entryAlphaAnim {
+  view-timeline-name: --entryAnim;
+  view-timeline-axis: block;
+
+  animation-timeline: --entryAnim;
+  animation-name: entryAlpha;
+
+  animation-range: entry 25% cover 70%;
+  animation-fill-mode: both;
+}
 
 @keyframes entryLeft {
   from {
@@ -426,7 +557,7 @@ backdrop-filter: blur(3px);
   animation-timeline: --entryAnim;
   animation-name: entryRight;
 
-  animation-range: entry 0% cover 50%;
+  animation-range: entry 0% cover 20%;
   animation-fill-mode: both;
 }
 
@@ -471,7 +602,6 @@ backdrop-filter: blur(3px);
   view-timeline-name:unset;
   view-timeline-axis:unset;
   animation-timeline:unset;
-  /* animation-range: entry 0% cover 60%; */
   animation-name: entryRight;
   animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
@@ -482,7 +612,6 @@ backdrop-filter: blur(3px);
   view-timeline-name:unset;
   view-timeline-axis:unset;
   animation-timeline:unset;
-  /* animation-range: entry 0% cover 60%; */
   animation-name: entryLeft;
   animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
@@ -490,6 +619,14 @@ backdrop-filter: blur(3px);
   }
 
 /*----------------------Media Query --------------------*/
+
+@media (max-width: 600px) {
+    .store-buttons {
+        flex-direction: column; /* Apila los botones verticalmente en pantallas pequeñas */
+        align-items: center;
+    }
+}
+
 
 @media (min-width: 640px) { 
   .topNavigation {
@@ -513,6 +650,7 @@ nav ul {
   grid-row: 2 / 12; 
   grid-column: 7 / 11;
 } 
+
 }
 
 @media (min-width: 768px) { 
@@ -555,6 +693,10 @@ nav ul {
     max-height: 40rem;
     margin: auto;
   }
+  .footer-container {
+        grid-template-columns: 1.5fr repeat(3, 1fr); 
+        text-align: left;
+    }
 }
 
 
@@ -569,6 +711,9 @@ nav ul {
 } 
 nav ul {
     flex-direction: row;
+}
+.cards { 
+  width: 30rem;
 }
 
 }
