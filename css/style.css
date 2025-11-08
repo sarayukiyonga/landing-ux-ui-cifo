@@ -244,26 +244,21 @@ nav ul {
    width: 100%;
 }
 
-
-
-
-
-
 div.imagen img {
     width: 100%;
     height: 450px;
     object-fit: contain;
 }
 
-#hero .texto button {
+#hero .texto {
   background: none;
 }
 
-#hero .texto button img {
-  width: 180px;
+#hero .texto img {
+  width: 150px;
 }
 
-#hero .texto button img:hover {
+#hero .texto img:hover {
   filter: invert();
 }
 
@@ -416,7 +411,7 @@ backdrop-filter: blur(3px);
 
 @keyframes entryRight {
   from {
-    transform: translateX(200%);
+    transform: translateX(300%);
   }
 
   to {
