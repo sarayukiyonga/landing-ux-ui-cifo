@@ -115,7 +115,7 @@ h1 {
 }
 
 h2 {
-    color: var(--primary-dark-20);
+    color: var(--primary-dark-30);
     font-size: var(--typography---inter---h2);
     font-weight: 700;
 }
