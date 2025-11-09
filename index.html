@@ -12,9 +12,9 @@
 
     <link rel="stylesheet" href="css/style.min.css">
 
-    <!-- <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico">
-<link rel="icon" type="image/png" href="/favicon_io/favicon-32x32.png" sizes="32x32">
-<link rel="apple-touch-icon" href="/favicon_io/apple-touch-icon.png"> -->
+    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon_io/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/favicon_io/apple-touch-icon.png">
 </head>
 <body id="top">
     <div id="container">
@@ -40,12 +40,21 @@
                 <p>AMPApp conecta a la junta con las familias: pagos online, inscripciones extraescolares y comunicación en una sola app.</p>
                  <a href="#registro"><button class="cta" tabindex="-1">Registrar mi AMPA/AFA</button></a>
                 </div>
-                <div class="imagen entryRightAnim"><img src="img/mockupPhone.webp" alt="Captures de pantalla de la App" srcset=""></div>
+                <div class="imagen entryRightAnim">
+                    <picture>
+                    <source srcset="img/mockup-phone.webp" media="(min-width: 800px)"> 
+                    <img src="img/mockup-phone-movil.webp" alt="Capturas de pantalla de la App" loading="lazy">
+                    </picture>
+</div>
             </section>
 
             <section id="funcionalidades">
                 <div class="funcionalidades">
-    <img class="img entryLeftAnim" src="img/mockup-inscripciones.webp" alt="Mockup de la pantalla de inscripción en un móvil" loading=”lazy”>
+                    <picture>
+                    <source srcset="img/mockup-inscripciones.webp" media="(min-width: 800px)"> 
+                     <img class="img entryLeftAnim" src="img/mockup-inscripciones-movil.webp" alt="Mockup de la pantalla de inscripción en un móvil" loading=”lazy”>
+                    </picture>
+   
 
     <div class="tit entryAlphaAnim">
         <h2>Funcionalidades</h2>

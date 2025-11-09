@@ -167,10 +167,6 @@ section[id] {
     }
 }
 
-button.cta { 
-    margin: 5px 100px;
-    }
-
   input {
     @layer elements {
     border-radius: 20px;
@@ -449,11 +445,10 @@ footer {
     margin: 0 auto;
     display: grid;
     gap: 30px;
-    /* Estructura para móvil: apilado */
     grid-template-columns: 1fr; 
 }
 
-/* Títulos de columna */
+
 footer h3 {
     color: var(--primary-light-10);
     font-size: var(--typography---inter---body-1);
@@ -461,7 +456,6 @@ footer h3 {
     margin-bottom: 15px;
 }
 
-/* Estilos de la marca/logo */
 .footer-brand img {
     max-width: 150px; 
     margin-bottom: 10px;
@@ -472,7 +466,7 @@ footer h3 {
     color: var(--neutral-dark-10);
 }
 
-/* Listas de navegación */
+
 .footer-nav-col ul {
     display: flex;
     flex-direction: column;
@@ -533,7 +527,7 @@ footer h3 {
   animation-timeline: --entryAnim;
   animation-name: entryLeft;
 
-  animation-range: entry 0% cover 50%;
+  animation-range: entry 0% cover 20%;
   animation-fill-mode: both;
 }
 
