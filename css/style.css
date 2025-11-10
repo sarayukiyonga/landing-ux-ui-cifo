@@ -10,8 +10,6 @@
     font-display:swap;
     src: url(../fonts/Inter-Italic-VariableFont_opsz_wght.woff);
 }
-
-
 /* Collection name: Colors */
 /* Mode: Mode 1 */
 :root {
@@ -107,6 +105,7 @@ html {
   body {
     font-family: "Inter";
     color: var(--secondary-dark-20);
+    overflow-x: hidden;
 }
 
 h1 {
@@ -150,7 +149,7 @@ section[id] {
 
 @layer components {
 
-  button {
+  .button {
     @layer elements {
     border-radius: 20px;
     border: 0px;
@@ -199,17 +198,18 @@ section[id] {
     "marca" 1fr
     "navegacion" 1fr
     / 1fr;
-  gap: 8px;
+  gap: 0px;
   box-shadow: var(--strong);
 }
 
-.marca { grid-area: marca; }
+.marca { grid-area: marca; display: flex; justify-content: center; align-items: center; }
 .navegacion { grid-area: navegacion; }
 
 .marca img {
-    width: 100%;
+    width: 200px;
     object-fit: contain;
     align-content: center;
+    margin: 10px auto;
 }
 
 #cabecera {
@@ -219,15 +219,14 @@ section[id] {
 #cabecera header {
     width: 100%;
     height:100%;
-    padding: 20px;
 }
 #cabecera nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content:space-around;
     align-items: center;
     height: 100%;
-    gap: 20px;
+    gap: 5px;
     font-size: var(--typography---inter--italic---body-1);
 }
 nav ul {
@@ -238,11 +237,11 @@ nav ul {
     gap: 20px;
 }
 
- button.primary {
+ a.primary {
     background: var(--primary-00);
 } 
 
- button.primary:hover {
+ a.primary:hover {
     background: var(--primary-light-20);
 } 
 
@@ -623,12 +622,23 @@ footer h3 {
   .topNavigation {
     grid:
     "marca navegacion" 1fr
-    / 172px 1fr;
+    / 250px 1fr;
   gap: 8px;
 }
+
+.marca { grid-area: marca; display: flex; justify-content: center; align-items: center; }
+.navegacion { grid-area: navegacion; }
+
+.marca img {
+    object-fit: contain;
+    align-content: center;
+    padding:0 20px;
+}
+
 #cabecera nav {
   flex-direction: row;
   justify-content: flex-end;
+  gap: 20px;
 }
 nav ul {
     flex-direction: row;
